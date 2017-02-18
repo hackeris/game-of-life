@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="game-screen"></canvas>
+
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/cell.js"></script>
+<script type="text/javascript" src="js/grid.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+<script type="text/javascript">
+
+  var game = new GameCanvas('game-screen', 800, 800, 0.3);
+  setInterval(function () {
+    game.step();
+  }, 100);
+
+</script>
+</body>
+</html>
