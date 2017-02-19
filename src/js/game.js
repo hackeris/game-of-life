@@ -2,14 +2,19 @@
  * Created by hackeris on 2017/2/18.
  */
 
-function GameCanvas(id, width, height, prob) {
+function GameCanvas(id, width, height) {
   this.canvas = document.getElementById(id);
   this.width = width;
   this.height = height;
   this.canvas.width = width;
   this.canvas.height = height;
   this.grid = new Grid(200, 200);
-  this.grid.randomFill(prob || 0.3);
+  this.grid.putCells([
+      [1, 0, 1],
+      [1, 0, 1],
+      [1, 1, 1]
+    ],
+    100, 100);
 }
 
 GameCanvas.prototype.step = function () {

@@ -11,7 +11,15 @@ function Grid(width, height) {
 Grid.prototype.randomFill = function (prob) {
   for (var i = 0; i < this.height; i++) {
     for (var j = 0; j < this.width; j++) {
-      this.array[i][j].status = Math.random() > prob ? 1 : 0;
+      this.array[i][j].status = Math.random() < prob ? 1 : 0;
+    }
+  }
+};
+
+Grid.prototype.putCells = function (cells, x, y) {
+  for (var i = 0; i < cells.length; i++) {
+    for (var j = 0; j < cells[0].length; j++) {
+      this.array[i + y][j + x].status = cells[i][j];
     }
   }
 };
